@@ -1,0 +1,28 @@
+//Length of the string
+
+#include<stdio.h>
+
+int strlen_p( char* js);
+
+ char *JSON_STRING =
+    "{\"user\": \"johndoe\", \"admin\": false, \"uid\": 1000,\n  "
+    "\"groups\": [\"users\", \"wheel\", \"audio\", \"video\"]}";
+int main(){
+
+int length;
+
+length=strlen_p(JSON_STRING);
+
+printf("The length of the string is:%d\n",length);
+}
+
+int strlen_p(char* js){
+static int l_temp;
+
+    while(*js!='\0'){
+        l_temp+=1;
+        js++;
+    }
+   
+return(l_temp);
+}
